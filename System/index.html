@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--
+Links de los iconos
+//-->
+<title>Hopat!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link href='https://blank-it.000webhostapp.com/Hopat/Hopa/icono/medicine-2_icon-icons.com_66043.ico' rel='icon' type='image/x-icon'/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="js/modernizr.min.js" type="text/javascript"></script>
+<script src='js/jquery.min.js' type="text/javascript"></script>
+<script  src="js/Funciones.js" type="text/javascript"></script>
+<script>
+var compare1="";
+var id1="";
+var txt1="";
+var primer1 =0;
+var ina1 =0;
+function loadDoc1(n)
+{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function()
+  {
+    if (this.readyState == 4 && this.status == 200)
+    {
+    myFunction1(this,n);
+    }
+  };
+  xhttp.open('GET','xml/archivo'+n+'.xml',true);
+  xhttp.send();
+  setTimeout('loadDoc1('+n+')',500);
+}
+function myFunction1(xml,n){
+  var i;
+  var xmlDoc = xml.responseXML;
+  id1 = xmlDoc.getElementsByTagName('id');
+  compare1="";
+  if(primer1==1)
+  {
+    for (i = 0; i < id1.length; i++)
+    {
+    compare1 += id1[i].childNodes[0].nodeValue + "<br>";
+    }
+  }
+  else
+  {
+  for (i = 0; i < id1.length; i++)
+  {
+  txt1 += id1[i].childNodes[0].nodeValue + "<br>";
+  compare1 += id1[i].childNodes[0].nodeValue + "<br>";
+  }
+  document.getElementById('demo'+n).innerHTML = txt1;
+  primer1=1;
+  }
+
+  if (txt1 != compare1)
+  {
+    Sonido();
+    txt1="";
+    for (i = 0; i < id1.length; i++)
+    {
+    txt1 += id1[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById('demo'+n).innerHTML = txt1;
+    ina1=1;
+  }
+  else if (ina1==1)
+  {
+    alert(id1[id1.length-1].childNodes[0].nodeValue+"\n¡¡Tiene una Emergencia!!");
+    ina1=0;
+  }
+  else
+  {
+  // No actualizar
+  }
+}
+</script>
+<script>
+var compare2="";
+var id2="";
+var txt2="";
+var primer2 =0;
+var ina2 =0;
+function loadDoc2(n)
+{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function()
+  {
+    if (this.readyState == 4 && this.status == 200)
+    {
+    myFunction2(this,n);
+    }
+  };
+  xhttp.open('GET','xml/archivo'+n+'.xml',true);
+  xhttp.send();
+  setTimeout('loadDoc2('+n+')',500);
+}
+function myFunction2(xml,n){
+  var i;
+  var xmlDoc = xml.responseXML;
+  id2 = xmlDoc.getElementsByTagName('id');
+  compare2="";
+  if(primer2==1)
+  {
+    for (i = 0; i < id2.length; i++)
+    {
+    compare2 += id2[i].childNodes[0].nodeValue + "<br>";
+    }
+  }
+  else
+  {
+  for (i = 0; i < id2.length; i++)
+  {
+  txt2 += id2[i].childNodes[0].nodeValue + "<br>";
+  compare2 += id2[i].childNodes[0].nodeValue + "<br>";
+  }
+  document.getElementById('demo'+n).innerHTML = txt2;
+  primer2=1;
+  }
+
+  if (txt2 != compare2)
+  {
+    Sonido();
+    txt2="";
+    for (i = 0; i < id2.length; i++)
+    {
+    txt2 += id2[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById('demo'+n).innerHTML = txt2;
+    ina2=1;
+  }
+  else if (ina2==1)
+  {
+    alert(id2[id2.length-1].childNodes[0].nodeValue+"\n¡¡Tiene una Emergencia!!");
+    ina2=0;
+  }
+  else
+  {
+  // No actualizar
+  }
+}
+</script>
+<script>
+var compare3="";
+var id3="";
+var txt3="";
+var primer3 =0;
+var ina3 =0;
+function loadDoc3(n)
+{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function()
+  {
+    if (this.readyState == 4 && this.status == 200)
+    {
+    myFunction3(this,n);
+    }
+  };
+  xhttp.open('GET','xml/archivo'+n+'.xml',true);
+  xhttp.send();
+  setTimeout('loadDoc3('+n+')',500);
+}
+function myFunction3(xml,n){
+  var i;
+  var xmlDoc = xml.responseXML;
+  id3 = xmlDoc.getElementsByTagName('id');
+  compare3="";
+  if(primer3==1)
+  {
+    for (i = 0; i < id3.length; i++)
+    {
+    compare3 += id3[i].childNodes[0].nodeValue + "<br>";
+    }
+  }
+  else
+  {
+  for (i = 0; i < id3.length; i++)
+  {
+  txt3 += id3[i].childNodes[0].nodeValue + "<br>";
+  compare3 += id3[i].childNodes[0].nodeValue + "<br>";
+  }
+  document.getElementById('demo'+n).innerHTML = txt3;
+  primer3=1;
+  }
+
+  if (txt3 != compare3)
+  {
+    Sonido();
+    txt3="";
+    for (i = 0; i < id3.length; i++)
+    {
+    txt3 += id3[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById('demo'+n).innerHTML = txt3;
+    ina3=1;
+  }
+  else if (ina3==1)
+  {
+    alert(id3[id3.length-1].childNodes[0].nodeValue+"\n¡¡Tiene una Emergencia!!");
+    ina3=0;
+  }
+  else
+  {
+  // No actualizar
+  }
+}
+</script>
+<script>
+var compare4="";
+var id4="";
+var txt4="";
+var primer4 =0;
+var ina4 =0;
+function loadDoc4(n)
+{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function()
+  {
+    if (this.readyState == 4 && this.status == 200)
+    {
+    myFunction4(this,n);
+    }
+  };
+  xhttp.open('GET','xml/archivo'+n+'.xml',true);
+  xhttp.send();
+  setTimeout('loadDoc4('+n+')',500);
+}
+function myFunction4(xml,n){
+  var i;
+  var xmlDoc = xml.responseXML;
+  id4 = xmlDoc.getElementsByTagName('id');
+  compare4="";
+  if(primer4==1)
+  {
+    for (i = 0; i < id4.length; i++)
+    {
+    compare4 += id4[i].childNodes[0].nodeValue + "<br>";
+    }
+  }
+  else
+  {
+  for (i = 0; i < id4.length; i++)
+  {
+  txt4 += id4[i].childNodes[0].nodeValue + "<br>";
+  compare4 += id4[i].childNodes[0].nodeValue + "<br>";
+  }
+  document.getElementById('demo'+n).innerHTML = txt4;
+  primer4=1;
+  }
+
+  if (txt4 != compare4)
+  {
+    Sonido();
+    txt4="";
+    for (i = 0; i < id4.length; i++)
+    {
+    txt4 += id4[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById('demo'+n).innerHTML = txt4;
+    ina4=1;
+  }
+  else if (ina4==1)
+  {
+    alert(id4[id4.length-1].childNodes[0].nodeValue+"\n¡¡Tiene una Emergencia!!");
+    ina4=0;
+  }
+  else
+  {
+  // No actualizar
+  }
+}
+</script>
+
+</head>
+<body onload='loadDoc1(1);loadDoc2(2);loadDoc3(3);loadDoc4(4);'>
+
+<!--
+// Cajas////////////////////////////////////////////////////////////////////////
+//-->
+
+<div class="container">
+
+<!--
+//Caja 1////////////////////////////////////////////////////////////////////////
+//-->
+
+<div class="box first">
+<span class="icon-cont"><i class="fa fa-plus-square"></i></span>
+<h3>Enfermera</h3>
+<ul class="hidden">
+<p id="demo1"></p> <!-- // Lugar de insercion de JS//-->
+</ul>
+<a class="expand"><span class="plus">+</span><span class="minus">-</span></a>
+</div>
+
+<!--
+//Caja 2////////////////////////////////////////////////////////////////////////
+//-->
+
+<div class="box second">
+<span class="icon-cont"><i class="material-icons">wc</i></span>
+<h3>Baño</h3>
+<ul class="hidden">
+<p id="demo2"></p>  <!--// Lugar de insercion de JS//-->
+</ul>
+<a class="expand"><span class="plus">+</span><span class="minus">-</span></a>
+</div>
+<div class="box third">
+<span class="icon-cont"><i class="fa fa-shower"></i></span>
+
+<!--
+//Caja 3////////////////////////////////////////////////////////////////////////
+//-->
+
+<h3>Regadera</h3>
+<ul class="hidden">
+<p id="demo3"></p>
+</ul>
+<a class="expand"><span class="plus">+</span><span class="minus">-</span></a>
+</div>
+<div class="box fourth">
+<span class="icon-cont"><i class="fa fa-heartbeat"></i></span>
+
+<!--
+//Caja 4////////////////////////////////////////////////////////////////////////
+//-->
+
+<h3>Emergencia</h3>
+<ul class="hidden">
+<p id="demo4"></p>  <!--// Lugar de insercion de JS//-->
+</ul>
+<a class="expand"><span class="plus">+</span><span class="minus">-</span></a>
+</div>
+
+<!--
+//Fin de contenedor
+//-->
+
+</div>
+
+<!--
+// Botones
+//-->
+<script  src="js/index.js" type="text/javascript"></script>
+<button onclick="myFunction()">Try it</button>
+<button onclick="FuncionEmergencia();Sonido();">Notificacion</button>
+
+</body>
+
+</html>
